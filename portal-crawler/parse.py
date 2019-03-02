@@ -2,7 +2,7 @@ import glob
 from bs4 import BeautifulSoup
 import pandas as pd
 
-file_name_list = glob.glob("*.html")
+file_name_list = glob.glob("html/*.html")
 
 final_data = []
 
@@ -49,3 +49,4 @@ for file_name in file_name_list:
 
 data_header= ['Name', 'link', 'Org Name', 'Org Link', 'Notes', 'Formats']
 df = pd.DataFrame(final_data, columns=data_header)
+df.to_csv('csv/dump.csv', index=False)
