@@ -66,7 +66,7 @@ def crawportalhtml():
 
 
 def appendhtml_file(category,data):
-    with codecs.open(category + ".html", 'w+', "utf-8") as myfile:
+    with codecs.open("./html/" + category + ".html", 'w+', "utf-8") as myfile:
         for row in data:
             myfile.write("%s\n" % row)
     return
